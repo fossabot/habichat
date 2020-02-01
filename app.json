@@ -2,27 +2,23 @@
   "expo": {
     "name": "HabiChat",
     "slug": "HabiChat",
-    "privacy": "public",
+    "privacy": "unlisted",
     "sdkVersion": "36.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "platforms": ["ios", "android", "web"],
+    "githubUrl": "https://github.com/gregbrimble/habitchat",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "primaryColor": "#D53F8C",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#D53F8C"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     }
