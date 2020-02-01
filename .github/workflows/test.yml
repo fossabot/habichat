@@ -20,7 +20,7 @@ jobs:
         run: npm run lint
       - name: Test
         run: npm run test:ci
-      # - name: Upload Coverage Report
-      #   uses: codecov/codecov-action@v1.0.2
-      #   with:
-      #     token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Upload Coverage Report
+        uses: codecov/codecov-action@v1.0.2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
