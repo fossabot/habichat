@@ -1,4 +1,4 @@
-name = "leveraging-the-power-of-a-typed-schema"
+name = "habichat"
 type = "webpack"
 webpack_config = "./packages/worker/webpack.config.js"
 account_id = "5a883b414d4090a1442b20361f3c43a9"
