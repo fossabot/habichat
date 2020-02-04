@@ -1,14 +1,23 @@
 {
   "scripts": {
     "postinstall": "lerna bootstrap",
+    "clean": "lerna run clean",
+    "clean:node": "lerna run clean:node && rimraf node_modules package-lock.json",
+    "start": "lerna run --scope client web",
+    "prebuild": "lerna run --scope client build:web",
+    "build": "wrangler build",
     "test": "CI=true lerna run test:ci",
+    "predeploy": "npm run prebuild",
+    "deploy": "wrangler publish",
     "lint": "lerna run lint",
-    "format": "lerna run format",
-    "start": "lerna run --scope client web"
+    "format": "lerna run format"
   },
   "dependencies": {},
   "devDependencies": {
-    "lerna": "3.20.2"
+    "@cloudflare/wrangler": "1.6.0",
+    "lerna": "3.20.2",
+    "ts-loader": "6.2.1",
+    "typescript": "3.7.5"
   },
   "private": true
 }

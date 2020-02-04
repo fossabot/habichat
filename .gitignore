@@ -385,3 +385,5 @@ gradle-app.setting
 .history
 
 # End of https://www.gitignore.io/api/git,node,reactnative,visualstudiocode
+
+web-build/
