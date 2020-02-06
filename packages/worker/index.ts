@@ -3,6 +3,7 @@ import {
   getAssetFromKV,
   serveSinglePageApp,
 } from '@cloudflare/kv-asset-handler'
+import { handleRequest as server } from '../server/src/entryPoints/cloudflare'
 
 const DEBUG_MODE = true
 
@@ -27,9 +28,11 @@ const handleAssetRequest = async (event: FetchEvent): Promise<Response> => {
   }
 }
 
-const handleRequest = (event: FetchEvent): Promise<Response> => {
+const handleRequest = async (event: FetchEvent): Promise<Response> => {
   const { request } = event
-  const url = new URL(request.url)
+
+  const resp = await server(request)
+  if (resp.status !== 400) return resp
 
   return handleAssetRequest(event)
 }
