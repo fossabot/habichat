@@ -10,9 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create GitHub Deployment
-        uses: deliverybot/deployment-status@v1
+        if: failure()
+        uses: niklasmerz/github-deployment-action@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          args: -o gregbrimble -r habichat -c master -e production
       - name: Checkout
         uses: actions/checkout@v1.0.0
         with:
@@ -28,15 +31,17 @@ jobs:
         run: npm run deploy
         env:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-      - name: Report Success
-        if: success()
-        uses: deliverybot/deployment-status@v1
-        with:
-          state: success
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Report Success
+      - name: Update GitHub Deployment
         if: failure()
-        uses: deliverybot/deployment-status@v1
+        uses: niklasmerz/github-deployment-action@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          state: failure
-          token: ${{ secrets.GITHUB_TOKEN }}
+          args: -o gregbrimble -r habichat -s failure -u https://habichat.gregbrimble.workers.dev -f
+      - name: Update GitHub Deployment
+        if: success()
+        uses: niklasmerz/github-deployment-action@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: -o gregbrimble -r habichat -s success -u https://habichat.gregbrimble.workers.dev -f
