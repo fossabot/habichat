@@ -4,7 +4,7 @@
     "clean": "lerna run clean",
     "clean:node": "lerna run clean:node && rimraf node_modules package-lock.json",
     "start": "lerna run --scope client web",
-    "prebuild": "lerna run --scope client build:web",
+    "prebuild": "lerna run --stream --scope client build:web",
     "build": "wrangler build",
     "test": "CI=true lerna run test:ci",
     "predeploy": "npm run prebuild",
