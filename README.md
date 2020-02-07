@@ -5,6 +5,7 @@
 [![GitHub Actions Test](https://img.shields.io/github/workflow/status/GregBrimble/habichat/Test?label=Test&logo=github&style=flat)](https://github.com/GregBrimble/habichat/actions?query=workflow%3ATest)
 [![GitHub Actions Deploy](https://img.shields.io/github/workflow/status/GregBrimble/habichat/Deploy?label=Deploy&logo=github&style=flat)](https://github.com/GregBrimble/habichat/actions?query=workflow%3ADeploy)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/GregBrimble/habichat.svg?logo=github&style=flat)](https://github.com/GregBrimble/habichat)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FGregBrimble%2Fhabichat.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FGregBrimble%2Fhabichat?ref=badge_shield)
 
 **Code**
 
@@ -22,3 +23,7 @@
 **Backlog**
 
 [![GitHub issues](https://img.shields.io/github/issues/gregbrimble/habichat?logo=github)](https://github.com/gregbrimble/habichat/issues)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FGregBrimble%2Fhabichat.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FGregBrimble%2Fhabichat?ref=badge_large)
